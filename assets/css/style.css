@@ -815,11 +815,14 @@ body {
 }
 
 .member-socials {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 0.5rem;
   width: 100%;
   margin-top: auto;
+}
+
+.member-socials .social-btn {
+  flex: 1;
 }
 
 .social-btn {
@@ -1130,10 +1133,13 @@ body {
 }
 
 .modal-socials-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 1rem;
   margin-top: 1.75rem;
+}
+
+.modal-socials-grid .social-btn {
+  flex: 1;
 }
 
 /* Toast de Notificação */
@@ -1213,6 +1219,65 @@ body {
   font-size: 0.85rem;
 }
 
+/* ---------------- MODELO 3D ---------------- */
+.model-viewer-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 2px solid rgba(13, 148, 136, 0.25);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.model-viewer-card model-viewer {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 60vh, 560px);
+  background: radial-gradient(circle at 50% 40%, #f6fcfa 0%, #cfeae2 100%);
+  --poster-color: transparent;
+}
+
+.model-progress {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 1.25rem;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: rgba(13, 148, 136, 0.15);
+  overflow: hidden;
+}
+
+.model-progress-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--brand-mint);
+  transform: scaleX(var(--progress-bar-value, 0));
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.model-viewer-error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--brand-mint-soft);
+}
+
+.model-viewer-error[hidden] {
+  display: none;
+}
+
+.model-viewer-card.is-loaded .model-progress {
+  display: none;
+}
+
 /* ---------------- RESPONSIVIDADE ---------------- */
 @media (max-width: 1140px) {
   .team-grid {
@@ -1281,9 +1346,48 @@ body {
   }
 
   .project-card-featured {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 2.25rem;
-    gap: 2rem;
+    gap: 1.75rem;
+  }
+
+  .project-info {
+    display: contents;
+  }
+
+  .project-header-group {
+    order: 1;
+    width: 100%;
+  }
+
+  .project-title {
+    margin-bottom: 0;
+  }
+
+  .video-trailer-box {
+    order: 2;
+    width: 100%;
+  }
+
+  .project-desc {
+    order: 3;
+    margin-bottom: 0;
+  }
+
+  .project-features {
+    order: 4;
+    margin-bottom: 0;
+  }
+
+  .project-cta-wrapper {
+    order: 5;
+    width: 100%;
+  }
+
+  .project-cta-wrapper .btn {
+    width: 100%;
+    text-align: center;
   }
 
   .advisor-showcase-card {
@@ -1413,7 +1517,7 @@ body {
   }
 
   .modal-socials-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .toast-notice {

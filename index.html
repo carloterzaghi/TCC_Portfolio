@@ -32,6 +32,9 @@
     href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
+  <!-- Visualizador 3D (Google model-viewer) -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
   <!-- Estilos CSS com tema do Banner -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -71,6 +74,7 @@
         <ul class="nav-menu" id="navMenu">
           <li><a href="#inicio" class="nav-link">Início</a></li>
           <li><a href="#trabalho" class="nav-link">Descrição do Trabalho</a></li>
+          <li><a href="#modelo-3d" class="nav-link">Modelo 3D</a></li>
           <li><a href="#equipe" class="nav-link">Integrantes da Equipe</a></li>
           <li><a href="#orientacao" class="nav-link">Orientadora</a></li>
         </ul>
@@ -185,14 +189,16 @@
 
         <div class="project-card-featured">
           <div class="project-info">
-            <span class="project-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              Eureka 2026 • Instituto Mauá de Tecnologia
-            </span>
-            <h3 class="project-title">A Plataforma Robótica MauAU</h3>
+            <div class="project-header-group">
+              <span class="project-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                Eureka 2026 • Instituto Mauá de Tecnologia
+              </span>
+              <h3 class="project-title">A Plataforma Robótica MauAU</h3>
+            </div>
 
             <p class="project-desc">
               O <strong>MauAU</strong> é um robô quadrúpede projetado e construído integralmente pela equipe,
@@ -229,7 +235,7 @@
               </div>
             </div>
 
-            <div>
+            <div class="project-cta-wrapper">
               <a href="https://github.com/carloterzaghi/Robot-Dog-Maua" target="_blank" rel="noopener noreferrer"
                 class="btn btn-primary">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -255,6 +261,32 @@
               <p class="video-caption-note">Assista à demonstração! 🐾</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODELO 3D DO MAUAU -->
+    <section class="section" id="modelo-3d">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Projeto Mecânico</span>
+          <h2 class="section-title">Modelo 3D do MauAU</h2>
+          <p class="section-subtitle">
+            Explore a montagem completa do robô: arraste para girar, use o scroll ou o gesto de pinça para dar zoom.
+          </p>
+        </div>
+
+        <div class="model-viewer-card">
+          <model-viewer id="mauauModel" src="3d_files/_montagem_cachorro.gltf" alt="Modelo 3D do robô quadrúpede MauAU"
+            camera-controls auto-rotate auto-rotate-delay="1500" touch-action="pan-y" interaction-prompt="auto"
+            shadow-intensity="1" exposure="1.1" environment-image="neutral" loading="lazy" reveal="auto">
+            <div class="model-progress" slot="progress-bar" aria-hidden="true">
+              <div class="model-progress-bar"></div>
+            </div>
+          </model-viewer>
+          <p class="model-viewer-error" id="modelViewerError" hidden>
+            Não foi possível carregar o modelo 3D no momento.
+          </p>
         </div>
       </div>
     </section>
@@ -328,6 +360,7 @@
         <div class="footer-links">
           <a href="#inicio" class="footer-link">Início</a>
           <a href="#trabalho" class="footer-link">Descrição do Trabalho</a>
+          <a href="#modelo-3d" class="footer-link">Modelo 3D</a>
           <a href="#equipe" class="footer-link">Integrantes da Equipe</a>
           <a href="#orientacao" class="footer-link">Orientadora</a>
           <a href="https://github.com/carloterzaghi/Robot-Dog-Maua" target="_blank" rel="noopener noreferrer"

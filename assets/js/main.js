@@ -103,6 +103,7 @@ function renderTeamCards() {
         </div>
 
         <div class="member-socials">
+          ${member.linkedin ? `
           <a 
             href="${member.linkedin}" 
             target="_blank" 
@@ -113,7 +114,9 @@ function renderTeamCards() {
             ${ICONS.linkedin}
             <span>LinkedIn</span>
           </a>
+          ` : ''}
 
+          ${member.github ? `
           <a 
             href="${member.github}" 
             target="_blank" 
@@ -124,6 +127,7 @@ function renderTeamCards() {
             ${ICONS.github}
             <span>GitHub</span>
           </a>
+          ` : ''}
         </div>
 
         <div class="action-card-footer">
@@ -175,7 +179,7 @@ function openMemberModal(memberId) {
       />
       <div class="modal-header-text">
         <h3>${member.fullName || member.name}</h3>
-        <p>${member.role}</p>
+        ${member.role || member.tagline ? `<p>${member.role || member.tagline}</p>` : ''}
       </div>
     </div>
 
@@ -309,4 +313,20 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAdvisorCard();
   renderTeamCards();
   setupGlobalEvents();
+
+  const modelViewer = document.getElementById('mauauModel');
+  const modelError = document.getElementById('modelViewerError');
+  if (modelViewer && modelError) {
+    const card = modelViewer.parentElement;
+    modelViewer.addEventListener('error', () => {
+      modelError.hidden = false;
+    });
+    modelViewer.addEventListener('progress', (e) => {
+      if (e.detail.totalProgress >= 1) card.classList.add('is-loaded');
+    });
+    modelViewer.addEventListener('load', () => {
+      modelError.hidden = true;
+      card.classList.add('is-loaded');
+    });
+  }
 });
