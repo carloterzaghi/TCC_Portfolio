@@ -1,47 +1,55 @@
-# 🐾 DESENVOLVIMENTO DE UMA PLATAFORMA QUADRÚPEDE (Robot Dog Mauá)
+# 🐾 MauAU - Plataforma Robótica Quadrúpede
 
-Repositório de apresentação e portfólio da equipe responsável pelo Trabalho de Conclusão de Curso (TCC) em Engenharia no Instituto Mauá de Tecnologia.
+Portfólio web oficial e apresentação da equipe do Trabalho de Conclusão de Curso (TCC) em **Engenharia de Controle e Automação** no **Instituto Mauá de Tecnologia (IMT)** para a **Eureka 2026**.
 
 - **Repositório do Robô**: [carloterzaghi/Robot-Dog-Maua](https://github.com/carloterzaghi/Robot-Dog-Maua)
-- **Orientadora**: **ANDRESSA CORRENTE MARTINS**
-- **Ano**: 2026
+- **Orientadora**: **Profª. M.ª Andressa Corrente Martins** — [LinkedIn](https://www.linkedin.com/in/andressacorrentemartins)
+- **Ano de Conclusão**: 2026
 
 ---
 
-## 👥 Equipe do Projeto
+## 👥 Integrantes da Equipe
 
-- **Carlo Terzaghi Tuck Schneider** — Líder Técnico & Software / Firmware (Cinemática Inversa e Controle)
-- **Gustavo** — Engenharia de Hardware & Eletrônica (Potência e Sensores)
-- **Tamilis** — Modelagem Mecânica & UI / Telemetria (Estrutura 3D e Interface)
-- **Kassem** — Algoritmos de Locomoção & Validação / QA (Gait Planning e Estabilidade)
-
----
-
-## 🦾 Sobre a Plataforma Quadrúpede
-
-O projeto visa desenvolver uma plataforma robótica quadrúpede bio-inspirada para locomoção estável em múltiplos terrenos, englobando:
-1. **Cinemática Direta e Inversa (IK)**: Resolução matemática das posições angulares de cada junta.
-2. **Gait Planning**: Geração de padrões de marcha e controle dinâmico de equilíbrio.
-3. **Hardware Embarcado**: Atuadores servomotores, unidade inercial (IMU) e barramentos de alta velocidade.
-4. **Estrutura Mecânica**: Chassi modelado em CAD para distribuição balanceada de massa e rigidez.
+- **Carlo Terzaghi Tuck Schneider** — Líder Técnico & Software / Firmware  
+  [LinkedIn](https://www.linkedin.com/in/carlotts) | [GitHub](https://github.com/carloterzaghi)
+- **Gustavo Junqueira Gallinari Arruda** — Engenharia de Hardware & Eletrônica  
+  [LinkedIn](https://www.linkedin.com/in/gustavo-junqueira-gallinari-arruda-55b337243)
+- **Tamilis Lin Wu** — Modelagem Mecânica & UI / Telemetria  
+  [LinkedIn](https://www.linkedin.com/in/tamilis-lin-wu-31a751240)
+- **Kassem Mahmoud Hamdoun** — Algoritmos de Locomoção & Validação / QA  
+  [LinkedIn](https://www.linkedin.com/in/kassem-mahmoud)
 
 ---
 
-## 📂 Estrutura do Site Portfólio
+## 🦾 Sobre a Plataforma MauAU
+
+O projeto investiga os princípios de locomoção bio-inspirada quadrúpede, integrando:
+1. **Cinemática Direta e Inversa (IK)**: Cálculo em tempo real dos ângulos articulares das 4 patas.
+2. **Gait Planning**: Geração de padrões de marcha e estabilização postural com leitura de IMU.
+3. **Hardware Embarcado**: Atuadores servomotores, barramentos de comunicação rápida e gerenciamento de potência.
+4. **Estrutura Mecânica CAD**: Modelagem 3D, balanceamento de centro de massa e chassi modular leve.
+
+---
+
+## 📂 Estrutura de Arquivos
 
 ```text
-├── index.html                 # Página principal com Hero, Equipe e Detalhes do TCC
-├── photos/                    # Fotos reais dos integrantes
+├── index.html                 # Página principal com vídeo trailer, equipe e orientadora
+├── photos/                    # Fotos reais dos integrantes e logo oficial
+│   ├── andressa.jpg
 │   ├── carlo.jpg
 │   ├── gustavo.png
+│   ├── kassem.jpg
 │   ├── tamilis.png
-│   └── kassem.jpg
+│   └── logo_mauau.png
+├── videos/                    # Trailer oficial em vídeo do TCC
+│   └── trailer.mp4
 ├── assets/
 │   ├── css/
-│   │   └── style.css          # Design system, glassmorphism e responsividade
+│   │   └── style.css          # Design system com tema MauAU
 │   └── js/
-│       ├── team-data.js       # Base de dados dos 4 integrantes
-│       └── main.js            # Lógica interativa, modais e efeitos
+│       ├── team-data.js       # Base de dados sincronizada com o LinkedIn
+│       └── main.js            # Lógica interativa, modais e eventos
 ├── LICENSE
 └── README.md
 ```
