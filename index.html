@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#eef8f5" />
 
   <!-- SEO & Metatags -->
   <title>MauAU | Desenvolvimento de uma Plataforma Robótica Quadrúpede • Mauá</title>
@@ -67,7 +68,7 @@
 
       <!-- Menu com a ordem: Início -> Descrição do Trabalho -> Integrantes da Equipe -> Orientadora -->
       <nav aria-label="Navegação principal">
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="navMenu">
           <li><a href="#inicio" class="nav-link">Início</a></li>
           <li><a href="#trabalho" class="nav-link">Descrição do Trabalho</a></li>
           <li><a href="#equipe" class="nav-link">Integrantes da Equipe</a></li>
@@ -83,6 +84,13 @@
         </svg>
         <span>Repositório do Robô</span>
       </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+        aria-controls="navMenu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
   </header>
 

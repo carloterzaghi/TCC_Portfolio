@@ -32,7 +32,7 @@ export const teamMembers = [
     skills: ["Sistemas Embarcados & IoT", "Projeto de PCBs & Firmware", "LoRa / NB-IoT / Wi-Fi", "ESP32 / Raspberry Pi", "C++ / Python"],
     linkedin: "https://www.linkedin.com/in/carlotts",
     github: "https://github.com/carloterzaghi",
-    email: "carlotts16@gmail.com",
+    email: "carlo.tts@outlook.com.br",
     featuredBadge: "Liderança Técnica"
   },
   {
@@ -60,7 +60,7 @@ export const teamMembers = [
     skills: ["Modelagem CAD 3D (SolidWorks)", "ANSYS", "Python & C", "Liderança IEEE / WIE", "Prototipagem & Telemetria"],
     linkedin: "https://www.linkedin.com/in/tamilis-lin-wu-31a751240",
     github: "https://github.com/carloterzaghi/Robot-Dog-Maua",
-    email: "tamilis@exemplo.com",
+    email: "tamilislinwu@gmail.com",
     featuredBadge: "Design & Mecânica"
   },
   {
@@ -74,7 +74,7 @@ export const teamMembers = [
     skills: ["Power BI & SQL", "Python & Machine Learning", "Computer Vision / YOLO", "Automação de Processos", "Lean Six Sigma Green Belt"],
     linkedin: "https://www.linkedin.com/in/kassem-mahmoud",
     github: "https://github.com/carloterzaghi/Robot-Dog-Maua",
-    email: "kassem@exemplo.com",
+    email: "kassem.m.hamdoun@gmail.com",
     featuredBadge: "Locomoção & Testes"
   }
 ];

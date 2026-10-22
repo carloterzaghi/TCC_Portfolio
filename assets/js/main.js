@@ -43,13 +43,6 @@ function renderAdvisorCard() {
       </div>
 
       <div class="advisor-details">
-        <div class="advisor-badge-top">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
-          </svg>
-          <span>Orientação Acadêmica • TCC</span>
-        </div>
-
         <h3 class="advisor-name-heading">${advisor.name}</h3>
         <p class="advisor-role-text">${advisor.tagline}</p>
         <p class="advisor-bio-text">${advisor.bio}</p>
@@ -101,7 +94,6 @@ function renderTeamCards() {
           </div>
         </div>
 
-        <span class="badge-role">${member.featuredBadge || member.role}</span>
         <h3 class="member-name">${member.fullName || member.name}</h3>
         <p class="member-tagline">${member.tagline}</p>
         <p class="member-bio">${member.bio}</p>
@@ -184,7 +176,6 @@ function openMemberModal(memberId) {
       <div class="modal-header-text">
         <h3>${member.fullName || member.name}</h3>
         <p>${member.role}</p>
-        <span class="badge-role" style="margin-top:0.5rem; display:inline-block;">${member.featuredBadge}</span>
       </div>
     </div>
 
@@ -271,6 +262,28 @@ function setupGlobalEvents() {
     }
   });
 
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  const setMenuOpen = (open) => {
+    navbar.classList.toggle('menu-open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  };
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      setMenuOpen(!navbar.classList.contains('menu-open'));
+    });
+    navMenu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setMenuOpen(false);
+    });
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target)) setMenuOpen(false);
+    });
+    window.matchMedia('(min-width: 993px)').addEventListener('change', () => setMenuOpen(false));
+  }
+
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener('click', closeModal);
   }
@@ -286,6 +299,7 @@ function setupGlobalEvents() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeModal();
+      if (navToggle) setMenuOpen(false);
     }
   });
 }
