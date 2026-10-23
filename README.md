@@ -39,7 +39,7 @@ O projeto investiga os princípios de locomoção bio-inspirada quadrúpede, int
 │   ├── andressa.jpg
 │   ├── carlo.jpg
 │   ├── gustavo.png
-│   ├── kassem.jpg
+│   ├── kassem.jpeg
 │   ├── tamilis.png
 │   └── logo_mauau.png
 ├── videos/                    # Trailer oficial em vídeo do TCC
